@@ -1,0 +1,38 @@
+{{ form_start(form) }}
+{#    {{ form_widget(form) }}#}
+<div class="container">
+    <div class="row">
+        <label>
+            {{ form_label(form.id, "ID") }}
+        </label>
+        {{ form_widget(form.id, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="row">
+        <label>
+            {{ form_label(form.Name, "Fullname") }}
+        </label>
+        {{ form_widget(form.Name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="row">
+        <label>
+            {{ form_label(form.DoB, "Date of Birth") }}
+        </label>
+        {{ form_widget(form.DoB, {'attr': {'class': 'form-control', 'type': 'date'}}) }}
+    </div>
+    <div class="row">
+        <label>
+            {{ form_label(form.PhoneNum, "Phone number") }}
+        </label>
+        {{ form_widget(form.PhoneNum, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="row">
+        <label>
+            {{ form_label(form.gender, "Gender") }}
+        </label>
+        {{ form_widget(form.gender, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="row">
+        <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+    </div>
+</div>
+{{ form_end(form) }}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Student{% endblock %}
+
+{% block body %}
+    {% if student == null %}
+        <p>Unavailable</p>
+    {% else %}
+        <h1>Student</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ student.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ student.Name }}</td>
+            </tr>
+            <tr>
+                <th>DoB</th>
+                <td>{{ student.DoB ? student.DoB|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>PhoneNum</th>
+                <td>{{ student.PhoneNum }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <th>{{ student.gender }}</th>
+            </tr>
+            </tbody>
+        </table>
+    {% endif %}
+
+    <a href="{{ path('app_student_index') }}">back to list</a>
+{% endblock %}
