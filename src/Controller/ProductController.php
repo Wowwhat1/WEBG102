@@ -19,10 +19,14 @@ class ProductController extends AbstractController
     /**
      * @Route("/", name="app_product_index", methods={"GET"})
      */
-    public function index(ProductRepository $productRepository): Response
+    public function index(Request $request, ProductRepository $productRepository): Response
     {
+//        $minPrice = $request->query->get('minPrice');
+//        $maxPrice = $request->query->get('maxPrice');
+        $product = $productRepository->findAll();
+//        $product = $productRepository->findAllInPriceRange($minPrice, $maxPrice);
         return $this->render('product/index.html.twig', [
-            'products' => $productRepository->findAll(),
+            'products' => $product,
         ]);
     }
 

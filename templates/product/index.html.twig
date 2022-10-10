@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Image</th>
                 <th>ProductName</th>
                 <th>Price</th>
                 <th>actions</th>
@@ -18,8 +19,11 @@
         {% for product in products %}
             <tr>
                 <td>{{ product.id }}</td>
+                <td>
+                    <img src=" {{ asset('images/product/'~ product.UniqueImage) }}" alt="Symfony" width="50" height="50">
+                </td>
+                <td>{{ product.UniqueImage }}</td>
                 <td>{{ product.ProductName }}</td>
-                <td>{{ product.Price }}</td>
                 <td>
                     <a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
                     <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
